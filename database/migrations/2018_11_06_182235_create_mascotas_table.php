@@ -17,16 +17,18 @@ class CreateMascotasTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->enum('sexo', ['F', 'M'])->default('F');
-            $table->timestamp('fecha_nacimiento')->default('0000-00-00 00-00-00');
-            $table->timestamp('fecha_muerte')->default('0000-00-00 00-00-00');
-            $table->timestamp('fecha_alta')->default('0000-00-00 00-00-00');
+            $table->date('fecha_nacimiento');
+            $table->date('fecha_muerte');
+            $table->date('fecha_alta');
             $table->text('descripcion');
 
+            /* foreign key
+            $table->integer('especie_id')->unsigned();
             $table->foreign('especie_id')
                               ->references('id')->on('especie')
                               ->onDelete('cascade')
                               ->onUpdate('cascade');
-            $table->timestamps();
+            $table->timestamps();*/
         });
     }
 
