@@ -23,12 +23,12 @@ class CreateMascotasTable extends Migration
             $table->text('descripcion');
 
             /* foreign key
-            $table->integer('especie_id')->unsigned();
+            $table->unsignedInteger('especie_id');
             $table->foreign('especie_id')
                               ->references('id')->on('especie')
                               ->onDelete('cascade')
-                              ->onUpdate('cascade');
-            $table->timestamps();*/
+                              ->onUpdate('cascade');*/
+            $table->timestamps();
         });
     }
 
