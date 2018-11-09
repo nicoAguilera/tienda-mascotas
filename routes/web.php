@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('mascotas', 'MascotaController');
+Route::resource('mascotas', 'PetController');
