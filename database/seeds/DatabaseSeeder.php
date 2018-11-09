@@ -18,12 +18,18 @@ class DatabaseSeeder extends Seeder
         \DB::table('species')->insert([
         	[	
         		"id"		=>	1,
-        		"name"	=>	"perro"],
-        	[
-        		"id"		=>	2,
-        		"name"	=>	"gato"],
+        		"name"	=>	"sin definir"
+            ],
+            [   
+                "id"        =>  2,
+                "name"  =>  "perro"
+            ],
         	[
         		"id"		=>	3,
+        		"name"	=>	"gato"
+            ],
+        	[
+        		"id"		=>	4,
         		"name"	=>	"ave"
         	]
         ]);
