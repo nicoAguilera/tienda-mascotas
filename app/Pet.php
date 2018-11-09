@@ -22,7 +22,7 @@ class Pet extends Model
 	/**
 	 * Relationship
 	 */
-	public function especie()
+	public function species()
 	{
 		return $this->belongsTo('App\Species');
 	}

@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('pets.index');
-});
+});*/
+Route::get('/', ['uses' => 'PetController@index', 'as' => 'pets.index']);
 
-Route::resource('mascotas', 'PetController');
+Route::resource('pets', 'PetController');

@@ -14,7 +14,11 @@ class PetController extends Controller
      */
     public function index()
     {
-        return view('pets.index');
+        $title = "Listado de Mascotas";
+
+        $pets = Pet::all();
+        
+        return view('pets.index', ['title' => $title, 'pets' => $pets]);
     }
 
     /**
