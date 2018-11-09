@@ -15,36 +15,38 @@ class DatabaseSeeder extends Seeder
         // Especies
         Model::unguard();
 
-        \DB::table('especie')->insert([
+        \DB::table('species')->insert([
         	[	
         		"id"		=>	1,
-        		"nombre"	=>	"perro"],
+        		"name"	=>	"perro"],
         	[
         		"id"		=>	2,
-        		"nombre"	=>	"gato"],
+        		"name"	=>	"gato"],
         	[
         		"id"		=>	3,
-        		"nombre"	=>	"ave"
+        		"name"	=>	"ave"
         	]
         ]);
 
         // Mascotas
-        \DB::table('mascotas')->insert([
+        \DB::table('pets')->insert([
         	[
-        		"nombre"			=>	"pier",
-        		"sexo"				=>	"M",
-        		"fecha_nacimiento"	=>	"2016-09-11",
-        		"fecha_muerte"		=>	"2017-11-16",
-        		"fecha_alta"		=>	"2016-10-01",
-        		"descripcion"		=>	"muy bonito"
+        		"name"	       		=>	"pier",
+        		"gender"			=>	"M",
+        		"birthdate"         =>	"2016-09-11",
+        		"death_date"		=>	"2017-11-16",
+        		"discharge_date"	=>	"2016-10-01",
+        		"observation"		=>	"muy bonito",
+                "species_id"        =>  1
         	],
         	[
-        		"nombre"			=>	"clara",
-        		"sexo"				=>	"F",
-        		"fecha_nacimiento"	=>	"2014-09-11",
-        		"fecha_muerte"		=>	"2018-03-25",
-        		"fecha_alta"		=>	"2016-10-01",
-        		"descripcion"		=>	"blanco y negro"
+        		"name"    			=>	"clara",
+        		"gender"			=>	"F",
+        		"birthdate"	        =>	"2014-09-11",
+        		"death_date"		=>	"2018-03-25",
+        		"discharge_date"	=>	"2016-10-01",
+        		"observation"		=>	"blanco y negro",
+                "species_id"        =>  2
         	]
         ]);
     }
