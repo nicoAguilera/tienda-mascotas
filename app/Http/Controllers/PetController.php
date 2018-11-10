@@ -28,7 +28,9 @@ class PetController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Nueva Ficha de Mascota";
+        
+        return view('pets.create', ['title' => $title]);
     }
 
     /**

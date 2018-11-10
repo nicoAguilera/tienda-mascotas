@@ -32,7 +32,7 @@
         </table>
     </section>
 
-    <div class="links">
+    <div class="links" style="padding-top: 50px;">
         <a href="{{ URL::route('pets.create') }}">Agregar Ficha Mascota</a>
     </div>
 </div>
