@@ -63,7 +63,9 @@ class PetController extends Controller
      */
     public function edit(Pet $pet)
     {
-        //
+        $title = "Editar Ficha de Mascota";
+
+        return view('pets.edit', ['pet' => $pet, 'title' => $title]);
     }
 
     /**
@@ -75,7 +77,13 @@ class PetController extends Controller
      */
     public function update(Request $request, Pet $pet)
     {
-        //
+        $result = $pet->update($request->only('name', 'gender', 'birthdate', 'death_date', 'observation'));
+        
+        if($result === true){
+            return Redirect::route('pets.show', $pet->id)->with('alert.success', "Ficha actualizada correctamente.");
+        }else{
+            return Redirect::route('pets.edit', $pet->id)->with('alert.danger', "¡Corregir los campos con valores incorrectos!");
+        }
     }
 
     /**

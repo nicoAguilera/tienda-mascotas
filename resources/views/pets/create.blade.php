@@ -7,12 +7,12 @@
     </div>
 
     <form>
-    	<label for="name">Nombre: </label><input type="text" name="name"><br>
-    	<label for="gender">Sexo: </label><input type="checkbox" name="gender" value="F" checked> F
-    	<input type="checkbox" name="gender" value="M"> M<br>
-    	<label for="birthday">Fecha de Nacimiento: </label> <input type="date" name="birthday"><br>
-    	<label>Fecha de Muerte: </label> <input type="date" name="death_date"><br>
-    	<label>Observaciones:</label><textarea></textarea>
+
+    	@include('pets._form-fields')
+    	
+    	<input type="hidden" name="discharge_date" value="2018-11-12">
+    	
+    	<button type="submit">Actualizar Ficha</button>
     </form>
 
     <div class="links" style="padding-top: 50px;">

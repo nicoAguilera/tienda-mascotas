@@ -26,7 +26,7 @@
                     <td>{{ $pet->discharge_date }}</td>
                     <td>{{ $pet->observation }}</td>
                     <td>{{ $pet->species->name }}</td>
-                    <td><button>Editar</button></td>
+                    <td><a href="{{ URL::route('pets.edit', [$pet->id]) }}">Editar Ficha</a></td>
                 </tr>
             @endforeach
         </table>
