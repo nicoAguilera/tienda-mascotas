@@ -14,11 +14,9 @@ class PetController extends Controller
      */
     public function index()
     {
-        $title = "Listado de Mascotas";
-
         $pets = Pet::all();
         
-        return view('pets.index', ['title' => $title, 'pets' => $pets]);
+        return view('pets.index', ['pets' => $pets]);
     }
 
     /**
@@ -28,9 +26,7 @@ class PetController extends Controller
      */
     public function create()
     {
-        $title = "Nueva Ficha de Mascota";
-        
-        return view('pets.create', ['title' => $title]);
+        return view('pets.create');
     }
 
     /**
@@ -63,9 +59,7 @@ class PetController extends Controller
      */
     public function edit(Pet $pet)
     {
-        $title = "Editar Ficha de Mascota";
-
-        return view('pets.edit', ['pet' => $pet, 'title' => $title]);
+        return view('pets.edit', ['pet' => $pet]);
     }
 
     /**

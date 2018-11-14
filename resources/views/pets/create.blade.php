@@ -3,16 +3,17 @@
 @section('content')
 <div class="content">
     <div class="title m-b-md">
-        {{$title}}
+        Nueva Ficha de Mascota
     </div>
 
-    <form>
+    <form method="POST" action="{{ URL::route('pets.store') }}" role="search">
+        @csrf
 
     	@include('pets._form-fields')
     	
-    	<input type="hidden" name="discharge_date" value="2018-11-12">
+    	<input type="hidden" name="discharge_date" value="hoy">
     	
-    	<button type="submit">Actualizar Ficha</button>
+    	<button type="submit">Guardar Ficha</button>
     </form>
 
     <div class="links" style="padding-top: 50px;">

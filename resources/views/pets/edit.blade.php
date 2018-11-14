@@ -3,10 +3,10 @@
 @section('content')
 <div class="content">
     <div class="title m-b-md">
-        {{$title}}
+        Editar Ficha de Mascota
     </div>
 
-    <form method="PATCH" action="{{ URL::route('pets.update', [$pet->id]) }}" role="search">
+    <form method="POST" action="{{ URL::route('pets.update', [$pet->id]) }}" role="search">
         @method('PATCH')
         @csrf
     	

@@ -1,4 +1,4 @@
-<label for="name">Nombre: {{$pet->name}}</label>
+<label for="name">Nombre: </label>
 <input type="text" name="name" value="{{ old('name') }}"><br>
 
 <label for="gender">Sexo: </label>

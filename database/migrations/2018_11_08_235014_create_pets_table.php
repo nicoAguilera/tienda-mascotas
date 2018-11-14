@@ -39,8 +39,6 @@ class CreatePetsTable extends Migration
     public function down()
     {
         Schema::table('pets', function (Blueprint $table) {
-            /*$table->dropForeign('pets_species_id_foreign');
-            $table->dropColumn('species_id');*/
             Schema::drop('pets');
         });
     }

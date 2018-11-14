@@ -3,7 +3,7 @@
 @section('content')
 <div class="content">
     <div class="title m-b-md">
-        {{$title}}
+        Listado de Mascotas
     </div>
     <section>
     	<table>
