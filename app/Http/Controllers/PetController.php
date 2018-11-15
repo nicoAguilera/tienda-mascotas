@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
+// Model
 use App\Pet;
+
+// Request
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePetValidation;
+
+// Date
+use Carbon\Carbon;
 
 class PetController extends Controller
 {
@@ -26,18 +33,24 @@ class PetController extends Controller
      */
     public function create()
     {
-        return view('pets.create');
+        $today = Carbon::now()->toDateString();
+        
+        return view('pets.create', ['today' => $today]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorePetValidation  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePetValidation $request)
     {
-        //
+        //var_dump($request->except('_token'));
+        $pet = Pet::create($request->except('_token'));
+        return redirect('/');
+        //return Redirect::route('pets.index');
+                //->with('alert.success', Lang::get('courses.create_success_alert'));*/
     }
 
     /**

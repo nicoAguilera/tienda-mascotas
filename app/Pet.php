@@ -12,7 +12,7 @@ class Pet extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'gender', 'birthdate', 'death_date', 'discharge_date', 'observation'];
+	protected $fillable = ['name', 'gender', 'birthdate', 'death_date', 'discharge_date', 'observation', 'species_id'];
 	/**
 	* The attributes that be mutated to dates
 	*
