@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('content')
-<div class="content">
+<div class="">
     <div class="title m-b-md">
         Nueva Ficha de Mascota
     </div>
@@ -26,7 +26,7 @@
     	<button type="submit">Guardar Ficha</button>
     </form>
 
-    <div class="links" style="padding-top: 50px;">
+    <div class="links content" style="padding-top: 50px;">
         <a href="{{ URL::route('pets.index') }}">Consultar Listado de Mascotas</a>
     </div>
 </div>

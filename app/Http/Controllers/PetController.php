@@ -46,7 +46,6 @@ class PetController extends Controller
      */
     public function store(StorePetValidation $request)
     {
-        //var_dump($request->except('_token'));
         $pet = Pet::create($request->except('_token'));
         return redirect('/');
         //return Redirect::route('pets.index');
@@ -78,19 +77,22 @@ class PetController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorePetValidation  $request
      * @param  \App\Pet  $pet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pet $pet)
+    public function update(StorePetValidation $request, Pet $pet)
     {
-        $result = $pet->update($request->only('name', 'gender', 'birthdate', 'death_date', 'observation'));
+        var_dump($pet->species_id);
+        echo "<br>";
+        var_dump($request->species_id);
+        /*$result = $pet->update($request->only('name', 'gender', 'birthdate', 'death_date', 'observation'));
         
         if($result === true){
             return Redirect::route('pets.show', $pet->id)->with('alert.success', "Ficha actualizada correctamente.");
         }else{
             return Redirect::route('pets.edit', $pet->id)->with('alert.danger', "¡Corregir los campos con valores incorrectos!");
-        }
+        }*/
     }
 
     /**
