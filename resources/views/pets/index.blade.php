@@ -11,6 +11,7 @@
     			<td>Nombre</td>
     			<td>Sexo</td>
     			<td>Fecha de Nacimiento</td>
+                <td>Edad</td>
     			<td>Fecha de Muerte</td>
     			<td>Fecha de Alta</td>
     			<td>Observaciones</td>
@@ -21,9 +22,10 @@
                 <tr>
                     <td>{{ $pet->name }}</td>
                     <td>{{ $pet->gender }}</td>
-                    <td>{{ $pet->birthdate }}</td>
-                    <td>{{ $pet->death_date }}</td>
-                    <td>{{ $pet->discharge_date }}</td>
+                    <td>{{ date_format(date_create($pet->birthdate), 'd-m-Y') }}</td>
+                    <td>{{ date_create()->diff(date_create($pet->birthdate))->y }}</td>
+                    <td>{{ date_format(date_create($pet->death_date), 'd-m-Y') }}</td>
+                    <td>{{ date_format(date_create($pet->discharge_date), 'd-m-Y') }}</td>
                     <td>{{ $pet->observation }}</td>
                     <td>{{ $pet->species->name }}</td>
                     <td><a href="{{ URL::route('pets.edit', [$pet->id]) }}">Editar Ficha</a></td>
